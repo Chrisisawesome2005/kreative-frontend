@@ -1,0 +1,288 @@
+$primary: #007bff;
+$dark: darken($primary, 10%);
+$light: lighten($primary, 20%);
+$shadow: 0px 12px 22px rgba(0, 0, 0, 0.1);
+$transition: all 0.4s ease;
+
+/*HELPERS*/
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-3 {
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+}
+
+.card-effect {
+  box-shadow: $shadow;
+  transition: $transition;
+}
+.card-effect:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  color: white;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.title-name {
+  color: $primary;
+}
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-justify: center;
+  padding: 20px;
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.navbar-nav .nav-link.active {
+  color: $primary;
+}
+
+/*NAVBAR*/
+.navbar {
+  font-weight: 500;
+}
+
+.btn {
+  border-width: 2px;
+  padding: 10px;
+}
+
+.image-zoom {
+  img {
+    transition: $transition;
+  }
+}
+.image-zoom:hover img {
+  transform: scale(1.2);
+}
+.image-zoom-wrapper {
+  overflow: hidden;
+}
+/*HERO*/
+#hero {
+  background-image: url(../images/cover.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.3);
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*SERVICES*/
+.service {
+  position: relative;
+  overflow: hidden;
+}
+.service::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: $primary;
+  transition: $transition;
+  opacity: 0;
+  z-index: -1;
+}
+.service:hover::after {
+  opacity: 1;
+  top: 0;
+}
+.service:hover {
+  .icon-box {
+    background-color: white;
+    color: $primary;
+  }
+  h5 {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+/*FEATURES*/
+.col-img {
+  background-image: url(../images/cover2.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 700px;
+}
+.feature {
+  p {
+    text-justify: left;
+  }
+  .icon-box {
+    flex: none;
+  }
+}
+
+/*PROJECTS*/
+.project {
+  position: relative;
+
+  .project-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($dark, 0.5);
+    opacity: 0;
+    transition: $transition;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-content:hover {
+    opacity: 1;
+  }
+}
+
+/*Pricing*/
+.price {
+  li {
+    display: flex;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+    background-color: $primary;
+    color: white;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .btn {
+    border-radius: 0;
+  }
+}
+
+/*TEAM*/
+.team-member {
+  padding: 20px;
+  img {
+    width: 125px;
+    border-radius: 50%;
+  }
+  .sosials {
+    display: inline-flex;
+  }
+  .icon-box {
+    transition: $transition;
+    margin-left: 1rem;
+    background-color: white;
+    color: $primary;
+  }
+
+  .icon-box:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
+
+/*BLOG*/
+.blog {
+  h4 {
+    color: $primary;
+  }
+}
+
+/*CONTACT*/
+#contact {
+  position: relative;
+}
+.contact-form::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(rgba($primary, 0.5), rgba($primary, 0.3)),
+    url(../images/cover2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.contact-form {
+  background-color: white;
+  border-radius: 0;
+  padding: 20px;
+  .btn {
+    border-radius: 0;
+  }
+}
+
+/*FOOTER*/
+footer {
+  color: white;
+  ul {
+    a {
+      color: lightgray;
+    }
+    a:hover {
+      color: $primary;
+    }
+  }
+  .footer-bottom {
+    .sosials {
+      display: inline-flex;
+
+      .icon-box {
+        display: flex;
+        margin-left: 1rem;
+        height: 18px;
+        width: 18px;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+      }
+      .icon-box:hover {
+        background-color: white;
+        color: $primary;
+      }
+    }
+  }
+}
